@@ -6,7 +6,13 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const messages = useSelector(messagesSelector.getMessages);
+
   const [users, setUsers] = useState([]);
+  const [lastMessageTime, setLastMessageTime] = useState([]);
+
+  useEffect(() => {
+    setLastMessageTime(messages[messages.length - 1]?.created_at);
+  }, [messages]);
 
   useEffect(() => {
     const uniqUsers = [];
@@ -30,7 +36,7 @@ const Header = () => {
         </div>
         <div className={styles.headerRight}>
           <p className={styles.timeLastMessage}>
-            Last message: 2019-08/18 15:15:07
+            Last message: {lastMessageTime}
           </p>
         </div>
       </Container>

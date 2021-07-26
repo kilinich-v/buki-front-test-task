@@ -74,4 +74,17 @@
 
   right: 12px;
   bottom: 9px;
+
+  cursor: pointer;
+}
+
+.delete {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+
+  right: 10px;
+  bottom: 10px;
+
+  cursor: pointer;
 }

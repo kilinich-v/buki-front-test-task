@@ -7,18 +7,24 @@ import {
   getMessageError,
   addMessageRequest,
   addMessageSuccess,
-  addMessageError
+  addMessageError,
+  changeMessageRequest,
+  changeMessageSuccess,
+  changeMessageError,
+  deleteMessageRequest,
+  deleteMessageSuccess,
+  deleteMessageError
 } from './messages-actions';
 import messagesDB from '../../db/b13799bf-0bf4-4a74-bf46-b7a2fb35a8c8.json';
 
 export const getMessages = () => dispatch => {
   dispatch(getMessageRequest());
 
-  const data = new Promise((res, rej) => {
+  const messagesData = new Promise((res, rej) => {
     res(dispatch(getMessageSuccess(messagesDB)));
   });
 
-  data.then(data => data).catch(err => dispatch(getMessageError(err)));
+  messagesData.then(data => data).catch(err => dispatch(getMessageError(err)));
 };
 
 export const addMessage = ({ message, user }) => dispatch => {
@@ -32,9 +38,33 @@ export const addMessage = ({ message, user }) => dispatch => {
 
   dispatch(addMessageRequest());
 
-  const data = new Promise((res, rej) => {
+  const messageData = new Promise((res, rej) => {
     res(dispatch(addMessageSuccess(newMessage)));
   });
 
-  data.then(data => data).catch(err => dispatch(addMessageError(err)));
+  messageData.then(data => data).catch(err => dispatch(addMessageError(err)));
+};
+
+export const changeMessage = userMessage => dispatch => {
+  dispatch(changeMessageRequest());
+
+  const messageData = new Promise((res, rej) => {
+    res(dispatch(changeMessageSuccess(userMessage)));
+  });
+
+  messageData
+    .then(data => data)
+    .catch(err => dispatch(changeMessageError(err)));
+};
+
+export const deleteMessage = id => dispatch => {
+  dispatch(deleteMessageRequest());
+
+  const messagesData = new Promise((res, rej) => {
+    res(dispatch(deleteMessageSuccess(id)));
+  });
+
+  messagesData
+    .then(data => data)
+    .catch(err => dispatch(deleteMessageError(err)));
 };

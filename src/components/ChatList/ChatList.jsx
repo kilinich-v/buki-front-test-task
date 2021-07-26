@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { messagesOperations, messagesSelector } from '../../redux/messages';
 import { userSelector } from '../../redux/user';
 import Container from '../Container';
-import { HeartIcon } from '../Icons';
+import { HeartIcon, DeleteIcon } from '../Icons';
+import UserMessage from './UserMessage';
 import styles from './ChatList.module.css';
 
 const ChatList = () => {
@@ -20,6 +21,10 @@ const ChatList = () => {
       top: scrollHeight,
       behavior: 'smooth'
     });
+  };
+
+  const handleSubmit = userMessage => {
+    dispatch(messagesOperations.changeMessage(userMessage));
   };
 
   useEffect(() => {
@@ -44,8 +49,18 @@ const ChatList = () => {
                 />
                 <div className={styles.textContent}>
                   <h6 className={styles.name}>{user}</h6>
-                  <p className={styles.message}>{message}</p>
+                  <UserMessage
+                    userMessage={{ id, user, avatar, created_at, message }}
+                    handleSubmit={handleSubmit}
+                  />
                   <p className={styles.time}>{created_at}</p>
+
+                  <div
+                    onClick={() =>
+                      dispatch(messagesOperations.deleteMessage(id))
+                    }>
+                    <DeleteIcon className={styles.delete} />
+                  </div>
                 </div>
               </li>
             ) : (
