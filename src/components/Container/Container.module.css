@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1190px;
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+}

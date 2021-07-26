@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import io from 'socket.io-client';
 import { messagesOperations } from '../../redux/messages';
-
-const ENDPOINT = 'https://buki-socket-io.herokuapp.com/';
+import { userOperations } from '../../redux/user';
 
 const MessageInput = () => {
-  const dispatch = useDispatch(useDispatch);
-
-  const [response, setResponse] = useState('');
+  const dispatch = useDispatch();
 
   const [message, setMessage] = useState('');
+  const [user, setUser] = useState(null);
+
   const handleMessage = evt => {
     setMessage(evt.target.value);
   };
@@ -18,7 +16,9 @@ const MessageInput = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    dispatch(messagesOperations.addMessage(message));
+    if (message === '') return;
+
+    dispatch(messagesOperations.addMessage({ message, user }));
     resetForm();
   };
 
@@ -26,20 +26,15 @@ const MessageInput = () => {
     setMessage('');
   };
 
-  const socket = io(ENDPOINT);
-
   useEffect(() => {
-    socket.on('FromAPI', data => {
-      data.emit('CHAT_MESSAGES', { message: message });
-      setResponse(data);
-    });
+    const userName = prompt('Enter your name', 'Anonymous');
 
-    return () => socket.disconnect();
+    setUser(userName);
   }, []);
 
   useEffect(() => {
-    return () => socket.disconnect();
-  }, [socket, message]);
+    dispatch(userOperations.currentUser(user));
+  }, [dispatch, user]);
 
   return (
     <div>

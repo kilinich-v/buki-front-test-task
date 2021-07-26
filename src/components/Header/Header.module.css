@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  color: var(--primary-color);
+  font-weight: 700;
+  background-color: var(--secondary-color);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  color: var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 36px;
+}
+
+.messagesInfo {
+}
+
+.timeLastMessage {
+}

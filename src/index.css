@@ -1,0 +1,43 @@
+@import-normalize;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --current-user-message-color: #4b4d4a;
+  --other-user-message-color: #e2e2e2;
+  --accent-color: #8cc054;
+  --primary-color: #fff;
+  --secondary-color: #000;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

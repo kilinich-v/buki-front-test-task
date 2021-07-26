@@ -21,10 +21,10 @@ export const getMessages = () => dispatch => {
   data.then(data => data).catch(err => dispatch(getMessageError(err)));
 };
 
-export const addMessage = message => dispatch => {
+export const addMessage = ({ message, user }) => dispatch => {
   const newMessage = {
     id: uuidv4(),
-    user: 'Taylor',
+    user,
     avatar: 'https://i.pravatar.cc/300?img=12',
     created_at: moment().format('YYYY-DD-MM h:mm:ss'),
     message
