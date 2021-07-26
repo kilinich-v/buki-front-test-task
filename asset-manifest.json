@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/buki-front-test-task/static/css/main.91921371.chunk.css",
+    "main.js": "/buki-front-test-task/static/js/main.1f5f16e0.chunk.js",
+    "main.js.map": "/buki-front-test-task/static/js/main.1f5f16e0.chunk.js.map",
+    "runtime-main.js": "/buki-front-test-task/static/js/runtime-main.a7dd534a.js",
+    "runtime-main.js.map": "/buki-front-test-task/static/js/runtime-main.a7dd534a.js.map",
+    "static/js/2.d1b06246.chunk.js": "/buki-front-test-task/static/js/2.d1b06246.chunk.js",
+    "static/js/2.d1b06246.chunk.js.map": "/buki-front-test-task/static/js/2.d1b06246.chunk.js.map",
+    "static/css/3.506e9ad3.chunk.css": "/buki-front-test-task/static/css/3.506e9ad3.chunk.css",
+    "static/js/3.ab9b8ff3.chunk.js": "/buki-front-test-task/static/js/3.ab9b8ff3.chunk.js",
+    "static/js/3.ab9b8ff3.chunk.js.map": "/buki-front-test-task/static/js/3.ab9b8ff3.chunk.js.map",
+    "static/js/4.97a48530.chunk.js": "/buki-front-test-task/static/js/4.97a48530.chunk.js",
+    "static/js/4.97a48530.chunk.js.map": "/buki-front-test-task/static/js/4.97a48530.chunk.js.map",
+    "index.html": "/buki-front-test-task/index.html",
+    "static/css/3.506e9ad3.chunk.css.map": "/buki-front-test-task/static/css/3.506e9ad3.chunk.css.map",
+    "static/css/main.91921371.chunk.css.map": "/buki-front-test-task/static/css/main.91921371.chunk.css.map",
+    "static/js/2.d1b06246.chunk.js.LICENSE.txt": "/buki-front-test-task/static/js/2.d1b06246.chunk.js.LICENSE.txt",
+    "static/js/4.97a48530.chunk.js.LICENSE.txt": "/buki-front-test-task/static/js/4.97a48530.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a7dd534a.js",
+    "static/js/2.d1b06246.chunk.js",
+    "static/css/main.91921371.chunk.css",
+    "static/js/main.1f5f16e0.chunk.js"
+  ]
+}
